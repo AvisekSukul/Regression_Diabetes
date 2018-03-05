@@ -49,3 +49,6 @@ library(xgboost)
 model2 = xgboost(param=param, data = train_new, label = train$Hazard, nrounds=2000, eta = .01, max_depth = 7,min_child_weight = 5, scale_pos_weight = 1.0, subsample=0.8) 
 predict_xgboost=predict(model2, test_new)
 fscaret::RMSE(predict_xgboost,test$Hazard,10999)#3.99
+
+
+data_frame[:c]=map(x -> contains(x,"ad") ? 1 :0,data_frame[:b])
